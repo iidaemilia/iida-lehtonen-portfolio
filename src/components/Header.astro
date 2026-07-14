@@ -1,0 +1,58 @@
+---
+import Container from "./Container.astro";
+---
+
+<header class="header">
+  <Container>
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        Iida Lehtonen
+      </a>
+
+      <nav class="header__nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </Container>
+</header>
+
+<style>
+
+.header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.5rem;
+}
+
+.header__logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header__nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.header__nav a {
+  font-size: 0.95rem;
+  transition: color .2s ease;
+}
+
+.header__nav a:hover {
+  color: var(--color-accent);
+}
+
+</style>

@@ -1,0 +1,66 @@
+---
+import Container from "./Container.astro";
+---
+
+<section class="hero">
+  <Container>
+    <div class="hero__content">
+      <p class="hero__eyebrow">
+        SEO • AI Search • Content Strategy
+      </p>
+
+      <h1>
+        Helping websites get discovered by people and AI.
+      </h1>
+
+      <p class="hero__intro">
+        I help organizations improve organic visibility through SEO,
+        AI Search, content strategy and technical experimentation.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#writing">Read my writing</a>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-xl);
+}
+    
+    .hero__content {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+    
+    .hero__eyebrow {
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.875rem;
+    }
+    
+    .hero__actions a {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border: 1px solid var(--color-accent);
+      color: var(--color-text);
+      transition: 0.2s ease;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    
+    .hero__actions a:hover {
+      background-color: var(--color-accent);
+      color: var(--color-background);
+    }
+    
+    </style>
