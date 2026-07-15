@@ -63,4 +63,16 @@ import Container from "./Container.astro";
       color: var(--color-background);
     }
     
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--space-xl) + 2rem);
+    padding-bottom: var(--space-lg);
+  }
+
+  .hero__content {
+    gap: var(--space-sm);
+  }
+}
+
     </style>

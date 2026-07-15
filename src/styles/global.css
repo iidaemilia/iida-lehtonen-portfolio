@@ -22,6 +22,8 @@
     --color-text-muted: #c9c9c9;
   
     --color-accent: #c8a96a;
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body: "Inter", sans-serif;
   
     --container-width: 1200px;
   
@@ -88,5 +90,14 @@
   }
 
   section {
-    padding-block: var(--space-xl);
+    padding-block: var(--space-2xl);
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+  
+  li::marker {
+    color: var(--color-accent);
+    font-size: 0.65em;
   }

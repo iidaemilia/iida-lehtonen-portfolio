@@ -1,0 +1,105 @@
+---
+import Container from "./Container.astro";
+---
+
+<section id="skills">
+  <Container>
+    <h2>Areas of Expertise</h2>
+
+    <p class="section-intro">
+      Combining strategy, search, analytics and AI to create digital experiences that deliver measurable business impact.
+    </p>
+
+    <div class="skills__grid">
+      <article class="skill-card">
+        <h3>Digital Strategy & Content</h3>
+        <ul>
+          <li>Website Strategy</li>
+          <li>Content Strategy</li>
+          <li>Digital Customer Experience</li>
+          <li>Content Governance</li>
+          <li>Conversion Optimisation</li>
+        </ul>
+      </article>
+
+      <article class="skill-card">
+        <h3>SEO & Organic Growth</h3>
+        <ul>
+          <li>Technical SEO</li>
+          <li>Content SEO</li>
+          <li>Information Architecture</li>
+          <li>GEO / AEO</li>
+          <li>AI Search</li>
+        </ul>
+      </article>
+
+      <article class="skill-card">
+        <h3>Analytics & Optimisation</h3>
+        <ul>
+          <li>Google Search Console</li>
+          <li>Google Analytics 4</li>
+          <li>Ahrefs</li>
+          <li>Performance Analysis</li>
+          <li>Data-driven Decision Making</li>
+        </ul>
+      </article>
+
+      <article class="skill-card">
+        <h3>AI & Digital Innovation</h3>
+        <ul>
+          <li>AI Workflows</li>
+          <li>Marketing AI</li>
+          <li>Automation</li>
+          <li>AI-assisted Development</li>
+          <li>Prompt Engineering</li>
+        </ul>
+      </article>
+    </div>
+  </Container>
+</section>
+
+<style>
+#skills h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.section-intro {
+  max-width: 48rem;
+  margin-bottom: var(--space-lg);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.skill-card {
+  padding: var(--space-sm);
+  border-top: 2px solid var(--color-accent);
+}
+
+.skill-card h3 {
+  margin-bottom: var(--space-sm);
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.skill-card ul {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  font-size: .95rem;
+}
+
+@media (max-width: 768px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
