@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+
+import Header from "../components/Header.astro";
+
+import Footer from "../components/Footer.astro";
+
+import Container from "../components/Container.astro";
+
+import AuthorBox from "../components/AuthorBox.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Header />
+
+<main>
+  <article>
+    <Container>
+        <div class="article__hero">
+            <Image
+              src={frontmatter.heroImage}
+              alt={frontmatter.heroAlt}
+            />
+          </div>
+    
+          <div class="article__header">
+            <div class="article__meta">
+              <span class="article__category">
+                {frontmatter.tags[0]}
+              </span>
+            
+              <span>•</span>
+            
+              <time datetime={frontmatter.publishDate.toISOString()}>
+                {frontmatter.publishDate.toLocaleDateString("en-GB", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </time>
+            
+              <span>•</span>
+            
+              <span>{frontmatter.readingTime} min read</span>
+            </div>
+        
+            <h1>{frontmatter.title}</h1>
+        
+            <p class="article__lead">
+              {frontmatter.excerpt}
+            </p>
+          </div>
+      
+      <hr />
+
+      <slot />
+      <AuthorBox />
+    </Container>
+  </article>
+</main>
+<Footer />
