@@ -7,9 +7,42 @@ import Skills from "../components/Skills.astro";
 import LatestWriting from "../components/LatestWriting.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Iida Lehtonen",
+    url: "https://iidalehtonen.com/",
+    description:
+      "Portfolio and writing about SEO, AI Search, content strategy and digital development.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Iida Lehtonen",
+    url: "https://iidalehtonen.com/",
+    jobTitle: "Website Content Manager",
+    knowsAbout: [
+      "SEO",
+      "AI Search",
+      "Content Strategy",
+      "Digital Customer Experience",
+      "Web Development",
+    ],
+    sameAs: [
+      "https://www.linkedin.com/in/iidalehtonen/",
+      "https://github.com/iidaemilia",
+    ],
+  },
+];
 ---
 
-<BaseLayout title="Iida Lehtonen">
+<BaseLayout
+  title="Iida Lehtonen | SEO, AI Search & Content Strategy"
+  description="Iida Lehtonen works at the intersection of SEO, AI Search, content strategy and technology."
+  schema={schema}
+>
   <Header />
 
   <main>

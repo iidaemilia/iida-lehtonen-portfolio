@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
 import AuthorBox from "../components/AuthorBox.astro";
@@ -32,9 +32,54 @@ const formattedPublishDate = frontmatter.publishDate.toLocaleDateString("en-GB",
   month: "long",
   year: "numeric",
 });
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const socialImage = await getImage({
+  src: frontmatter.heroImage,
+  width: 1200,
+  height: 630,
+  fit: "cover",
+  format: "jpg",
+});
+const socialImageUrl = new URL(socialImage.src, Astro.site);
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: frontmatter.title,
+  description: frontmatter.description,
+  image: socialImageUrl.href,
+  datePublished: frontmatter.publishDate.toISOString(),
+  ...(frontmatter.updatedDate && {
+    dateModified: frontmatter.updatedDate.toISOString(),
+  }),
+  author: {
+    "@type": "Person",
+    name: frontmatter.author,
+    url: "https://iidalehtonen.com/",
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Iida Lehtonen",
+    url: "https://iidalehtonen.com/",
+  },
+  mainEntityOfPage: canonicalUrl.href,
+};
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout
+  title={`${frontmatter.title} | Iida Lehtonen`}
+  description={frontmatter.description}
+  image={socialImage.src}
+  imageAlt={frontmatter.heroAlt}
+  imageWidth={1200}
+  imageHeight={630}
+  type="article"
+  publishDate={frontmatter.publishDate}
+  updatedDate={frontmatter.updatedDate}
+  tags={frontmatter.tags}
+  schema={articleSchema}
+>
   <Header />
 
   <main class="article-page">
