@@ -25,6 +25,7 @@ export const GET: APIRoute = async ({ site }) => {
 
 - [Home](${new URL("/", site).href}): Professional profile, areas of expertise and contact information.
 - [Writing](${new URL("/writing/", site).href}): All published articles, newest first.
+- [Privacy and cookies](${new URL("/privacy/", site).href}): Information about analytics, consent and personal data processing.
 
 ## Articles
 

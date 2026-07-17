@@ -1,0 +1,113 @@
+---
+import Container from "../components/Container.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page not found | Iida Lehtonen"
+  description="The page you were looking for could not be found."
+  noindex
+>
+  <Header />
+
+  <main class="not-found">
+    <Container>
+      <div class="not-found__content">
+        <p class="not-found__code" aria-hidden="true">404</p>
+        <h1>Page not found</h1>
+        <p class="not-found__intro">
+          The page may have moved, or the address might be incorrect. You can
+          return home or explore the latest writing.
+        </p>
+
+        <div class="not-found__actions">
+          <a class="not-found__primary" href="/">Back to home</a>
+          <a class="not-found__secondary" href="/writing/">View writing <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </Container>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .not-found {
+    display: flex;
+    min-height: calc(100vh - 9rem);
+    align-items: center;
+    padding-block: 9rem 4rem;
+  }
+
+  .not-found__content {
+    max-width: 48rem;
+  }
+
+  .not-found__code {
+    margin-bottom: var(--space-sm);
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+  }
+
+  .not-found h1 {
+    font-size: clamp(3.75rem, 10vw, 7rem);
+    text-wrap: balance;
+  }
+
+  .not-found__intro {
+    max-width: 39rem;
+    margin-top: var(--space-md);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+  }
+
+  .not-found__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: var(--space-md);
+  }
+
+  .not-found__primary {
+    display: inline-flex;
+    min-height: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    border: 1px solid var(--color-accent);
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .not-found__primary:hover {
+    background: var(--color-accent);
+    color: var(--color-background);
+  }
+
+  .not-found__secondary {
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--color-accent);
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .not-found__secondary:hover {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 600px) {
+    .not-found {
+      min-height: auto;
+      padding-block: 9rem 3rem;
+    }
+
+    .not-found__actions {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>

@@ -6,10 +6,23 @@ import Container from "./Container.astro";
   <Container>
     <div class="footer__content">
       <p>© 2026 Iida Lehtonen</p>
+      <div class="footer__links">
+        <a href="/privacy/">Privacy & cookies</a>
+        <button type="button" data-cookie-settings>Cookie settings</button>
+      </div>
       <p>Designed, written and built with Astro.</p>
     </div>
   </Container>
 </footer>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-cookie-settings]").forEach((button) => {
+    button.addEventListener("click", () => {
+      window.dispatchEvent(new CustomEvent("open-cookie-settings"));
+    });
+  });
+</script>
+
 <style>
 footer {
     margin-top: var(--space-xl);
@@ -30,10 +43,36 @@ footer {
     margin: 0;
 }
 
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer__links a,
+.footer__links button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: .85rem;
+  cursor: pointer;
+}
+
+.footer__links a:hover,
+.footer__links button:hover {
+  color: var(--color-accent);
+}
+
 @media (max-width: 768px) {
   .footer__content {
     flex-direction: column;
     text-align: center;
+  }
+
+  .footer__links {
+    flex-wrap: wrap;
   }
 }
 </style>

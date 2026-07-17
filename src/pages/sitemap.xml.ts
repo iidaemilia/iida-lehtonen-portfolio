@@ -23,6 +23,7 @@ export const GET: APIRoute = async ({ site }) => {
   const pages = [
     { url: new URL("/", site), lastmod: undefined },
     { url: new URL("/writing/", site), lastmod: undefined },
+    { url: new URL("/privacy/", site), lastmod: undefined },
     ...articles.map((article) => ({
       url: new URL(`/writing/${article.id}/`, site),
       lastmod: article.data.updatedDate ?? article.data.publishDate,

@@ -10,7 +10,7 @@ author: "Iida Lehtonen"
 readingTime: 5
 
 heroImage: "../../assets/images/gsc-python-tool-article-hero.jpg"
-heroAlt: "Laptop displaying an AI-assisted website project"
+heroAlt: "Person in a mustard sweater using a laptop at a wooden table"
 
 tags:
   - SEO

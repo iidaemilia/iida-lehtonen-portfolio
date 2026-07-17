@@ -1,0 +1,146 @@
+---
+import Container from "../components/Container.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Privacy and cookies | Iida Lehtonen"
+  description="Information about privacy, analytics and cookies on iidalehtonen.com."
+>
+  <Header />
+
+  <main class="privacy-page">
+    <Container>
+      <article class="privacy-content">
+        <header>
+          <p class="privacy-content__eyebrow">Last updated 17 July 2026</p>
+          <h1>Privacy and cookies</h1>
+          <p class="privacy-content__intro">
+            This notice explains how iidalehtonen.com handles personal data and
+            uses optional analytics.
+          </p>
+        </header>
+
+        <h2>Data controller</h2>
+        <p>
+          Iida Lehtonen<br />
+          <a href="mailto:iida.e.lehtonen@gmail.com">iida.e.lehtonen@gmail.com</a>
+        </p>
+
+        <h2>Google Analytics</h2>
+        <p>
+          This site uses Google Analytics 4 to understand how visitors use the
+          site and to improve its content. Google Analytics is disabled by
+          default and only loads after you choose “Accept analytics”.
+        </p>
+        <p>
+          Analytics data can include pages visited, approximate location,
+          device and browser information, referring pages, session information
+          and interactions with the site. The site does not use Google Analytics
+          for advertising or ad personalisation.
+        </p>
+
+        <h2>Legal basis and consent</h2>
+        <p>
+          The legal basis for analytics processing is your consent. You may
+          decline analytics without losing access to any content or feature on
+          the site.
+        </p>
+
+        <h2>Cookies and local storage</h2>
+        <p>
+          If you accept analytics, Google Analytics may set first-party cookies
+          beginning with <code>_ga</code> to distinguish visits and sessions.
+          Your consent choice is stored in your browser’s local storage so the
+          site can remember it on later visits.
+        </p>
+
+        <h2>Changing your choice</h2>
+        <p>
+          You can reopen the consent controls at any time using “Cookie
+          settings” in the footer. Declining after previously accepting stops
+          future analytics collection and removes Google Analytics cookies set
+          for this site where the browser permits it.
+        </p>
+
+        <h2>Service providers and international processing</h2>
+        <p>
+          The website is hosted by Vercel. Google provides the analytics
+          service. These providers may process technical data outside your home
+          country under their applicable data protection arrangements.
+        </p>
+        <ul>
+          <li><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel Privacy Policy</a></li>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+        </ul>
+
+        <h2>Your rights</h2>
+        <p>
+          Depending on the applicable law, you may have rights concerning your
+          personal data, including access, correction, deletion, restriction,
+          objection and withdrawal of consent. You may also lodge a complaint
+          with your local data protection authority. Contact the data controller
+          using the email address above to make a request.
+        </p>
+      </article>
+    </Container>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .privacy-page {
+    padding-block: 5.5rem 0;
+  }
+
+  .privacy-content {
+    width: min(100%, 50rem);
+    margin-inline: auto;
+    padding-top: clamp(3.5rem, 8vw, 7rem);
+  }
+
+  .privacy-content header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .privacy-content__eyebrow {
+    margin-bottom: var(--space-sm);
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .privacy-content h1 {
+    font-size: clamp(3.5rem, 9vw, 6rem);
+  }
+
+  .privacy-content__intro {
+    margin-top: var(--space-md);
+    font-size: 1.2rem;
+  }
+
+  .privacy-content h2 {
+    margin: 3rem 0 1rem;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+  }
+
+  .privacy-content p,
+  .privacy-content ul {
+    margin-block: 0 1.25rem;
+  }
+
+  .privacy-content a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .privacy-content code {
+    color: var(--color-text);
+  }
+</style>

@@ -1,0 +1,244 @@
+<aside
+  class="consent-banner"
+  id="analytics-consent"
+  aria-labelledby="consent-title"
+  aria-describedby="consent-description"
+  hidden
+>
+  <div class="consent-banner__content">
+    <div>
+      <h2 id="consent-title">Analytics cookies</h2>
+      <p id="consent-description">
+        I use Google Analytics to understand how the site is used and improve
+        its content. Analytics only starts if you accept.{" "}
+        <a href="/privacy/">Read the privacy and cookie notice</a>.
+      </p>
+    </div>
+
+    <div class="consent-banner__actions">
+      <button type="button" class="consent-banner__decline" data-consent="denied">
+        Decline
+      </button>
+      <button type="button" class="consent-banner__accept" data-consent="granted">
+        Accept analytics
+      </button>
+    </div>
+  </div>
+</aside>
+
+<script>
+  const CONSENT_KEY = "analytics-consent";
+  const MEASUREMENT_ID = "G-BXNY9M5QK3";
+  const banner = document.querySelector<HTMLElement>("#analytics-consent");
+  const consentButtons = banner?.querySelectorAll<HTMLButtonElement>("[data-consent]");
+
+  const getStoredConsent = () => {
+    try {
+      return window.localStorage.getItem(CONSENT_KEY);
+    } catch {
+      return null;
+    }
+  };
+
+  const storeConsent = (value: string) => {
+    try {
+      window.localStorage.setItem(CONSENT_KEY, value);
+    } catch {
+      // The choice still applies to the current page when storage is unavailable.
+    }
+  };
+
+  const initializeDataLayer = () => {
+    const analyticsWindow = window as typeof window & {
+      dataLayer: unknown[][];
+      gtag: (...args: unknown[]) => void;
+    };
+
+    analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+    analyticsWindow.gtag = (...args: unknown[]) => {
+      analyticsWindow.dataLayer.push(args);
+    };
+
+    return analyticsWindow.gtag;
+  };
+
+  const loadAnalytics = () => {
+    if (document.querySelector(`script[data-google-tag="${MEASUREMENT_ID}"]`)) {
+      return;
+    }
+
+    const gtag = initializeDataLayer();
+
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+    });
+    gtag("consent", "update", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "granted",
+    });
+    gtag("js", new Date());
+    gtag("config", MEASUREMENT_ID);
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`;
+    script.dataset.googleTag = MEASUREMENT_ID;
+    document.head.append(script);
+  };
+
+  const disableAnalytics = () => {
+    const analyticsWindow = window as typeof window & {
+      gtag?: (...args: unknown[]) => void;
+    };
+
+    analyticsWindow.gtag?.("consent", "update", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+    });
+
+    document.cookie.split(";").forEach((cookie) => {
+      const name = cookie.split("=")[0]?.trim();
+
+      if (name?.startsWith("_ga")) {
+        document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`;
+        document.cookie = `${name}=; Max-Age=0; path=/; domain=.iidalehtonen.com; SameSite=Lax`;
+      }
+    });
+  };
+
+  const applyConsent = (value: string) => {
+    storeConsent(value);
+
+    if (value === "granted") {
+      loadAnalytics();
+    } else {
+      disableAnalytics();
+    }
+
+    if (banner) {
+      banner.hidden = true;
+    }
+  };
+
+  consentButtons?.forEach((button) => {
+    button.addEventListener("click", () => {
+      applyConsent(button.dataset.consent ?? "denied");
+    });
+  });
+
+  window.addEventListener("open-cookie-settings", () => {
+    if (banner) {
+      banner.hidden = false;
+      banner.querySelector<HTMLButtonElement>("button")?.focus();
+    }
+  });
+
+  const storedConsent = getStoredConsent();
+
+  if (storedConsent === "granted") {
+    loadAnalytics();
+  } else if (storedConsent !== "denied" && banner) {
+    banner.hidden = false;
+  }
+</script>
+
+<style>
+  .consent-banner {
+    position: fixed;
+    inset: auto 1rem 1rem;
+    z-index: 1000;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding: 1.5rem;
+    border: 1px solid rgba(200, 169, 106, 0.55);
+    background: var(--color-surface);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.45);
+  }
+
+  .consent-banner[hidden] {
+    display: none;
+  }
+
+  .consent-banner__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-md);
+    align-items: center;
+  }
+
+  .consent-banner h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .consent-banner p {
+    max-width: 46rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .consent-banner p a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .consent-banner__actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .consent-banner button {
+    min-height: 2.8rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--color-accent);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .consent-banner__decline {
+    background: transparent;
+    color: var(--color-text);
+  }
+
+  .consent-banner__accept {
+    background: var(--color-accent);
+    color: var(--color-background);
+  }
+
+  .consent-banner button:hover,
+  .consent-banner button:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 720px) {
+    .consent-banner__content {
+      grid-template-columns: 1fr;
+    }
+
+    .consent-banner__actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .consent-banner {
+      padding: 1.25rem;
+    }
+
+    .consent-banner__actions {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
