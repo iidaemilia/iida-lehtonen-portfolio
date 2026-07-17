@@ -427,9 +427,19 @@ const articleSchema = {
     }
 
     .article__body table {
-      display: block;
-      overflow-x: auto;
-      white-space: nowrap;
+      table-layout: fixed;
+      white-space: normal;
+    }
+
+    .article__body th:first-child,
+    .article__body td:first-child {
+      width: 34%;
+    }
+
+    .article__body th,
+    .article__body td {
+      padding: 0.7rem 0.75rem;
+      overflow-wrap: anywhere;
     }
 
     .article__body pre {
