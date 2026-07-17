@@ -1,0 +1,230 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+import Container from "./Container.astro";
+
+const articles = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+---
+
+<section id="writing" class="latest-writing">
+  <Container>
+    <div class="latest-writing__header">
+      <div>
+        <p class="latest-writing__eyebrow">Ideas & observations</p>
+        <h2>Latest writing</h2>
+      </div>
+
+      <a class="latest-writing__all" href="/writing/">
+        View all <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="latest-writing__grid">
+      {articles.map((article) => (
+        <article class="writing-card">
+          <a href={`/writing/${article.id}/`} class="writing-card__link">
+            <div class="writing-card__image">
+              <Image
+                src={article.data.heroImage}
+                alt={article.data.heroAlt}
+                widths={[400, 640, 800]}
+                sizes="(max-width: 768px) calc(100vw - 2rem), 33vw"
+                format="webp"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="writing-card__meta">
+              <time datetime={article.data.publishDate.toISOString()}>
+                {formatDate(article.data.publishDate)}
+              </time>
+              <span aria-hidden="true"></span>
+              <span>{article.data.readingTime} min read</span>
+            </div>
+
+            <h3>{article.data.title}</h3>
+            <p>{article.data.excerpt}</p>
+
+            <span class="writing-card__cta">
+              Read article <span aria-hidden="true">→</span>
+            </span>
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <a class="latest-writing__all latest-writing__all--mobile" href="/writing/">
+      View all <span aria-hidden="true">→</span>
+    </a>
+  </Container>
+</section>
+
+<style>
+  .latest-writing {
+    padding-block: var(--space-xl);
+  }
+
+  .latest-writing__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .latest-writing__eyebrow {
+    margin-bottom: var(--space-sm);
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .latest-writing__all {
+    flex: 0 0 auto;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .latest-writing__all:hover {
+    color: var(--color-accent);
+  }
+
+  .latest-writing__all--mobile {
+    display: none;
+  }
+
+  .latest-writing__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .writing-card {
+    min-width: 0;
+  }
+
+  .writing-card__link {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .writing-card__image {
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    margin-bottom: 1.5rem;
+    background: var(--color-surface);
+  }
+
+  .writing-card__image :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .writing-card__link:hover .writing-card__image :global(img) {
+    transform: scale(1.03);
+  }
+
+  .writing-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 0.85rem;
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .writing-card__meta > span[aria-hidden="true"] {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .writing-card h3 {
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-size: clamp(1.65rem, 3vw, 2.25rem);
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+
+  .writing-card p {
+    margin-top: var(--space-sm);
+    font-size: 0.95rem;
+  }
+
+  .writing-card__cta {
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: var(--space-md);
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .writing-card__link:hover .writing-card__cta {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 900px) {
+    .latest-writing__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .writing-card__link {
+      height: auto;
+    }
+
+    .writing-card__image {
+      aspect-ratio: 16 / 9;
+    }
+
+    .writing-card__cta {
+      margin-top: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .latest-writing {
+      padding-block: var(--space-lg);
+    }
+
+    .latest-writing__header {
+      margin-bottom: var(--space-md);
+    }
+
+    .latest-writing__header > .latest-writing__all {
+      display: none;
+    }
+
+    .latest-writing__all--mobile {
+      display: inline-block;
+      margin-top: var(--space-lg);
+    }
+  }
+</style>

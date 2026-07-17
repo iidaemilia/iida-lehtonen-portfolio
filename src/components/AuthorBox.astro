@@ -1,0 +1,93 @@
+<aside class="author-box" aria-label="About the author">
+  <img
+    class="author-box__image"
+    src="/images/iida.jpg"
+    alt="Iida Lehtonen"
+    width="160"
+    height="160"
+    loading="lazy"
+  />
+
+  <div class="author-box__content">
+    <p class="author-box__eyebrow">Written by</p>
+    <h2>Iida Lehtonen</h2>
+    <p>
+      Digital strategist working at the intersection of SEO, content, AI and
+      technology.
+    </p>
+    <div class="author-box__links">
+      <a href="https://www.linkedin.com/in/iidalehtonen/" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
+      <a href="mailto:iida.e.lehtonen@gmail.com">Email</a>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .author-box {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: var(--space-md);
+    align-items: center;
+    margin-top: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-surface);
+    border-top: 2px solid var(--color-accent);
+  }
+
+  .author-box__image {
+    display: block;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 35%;
+  }
+
+  .author-box__content {
+    min-width: 0;
+  }
+
+  .author-box__eyebrow {
+    margin-bottom: 0.25rem;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+  }
+
+  .author-box__links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .author-box__links a {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  @media (max-width: 600px) {
+    .author-box {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+
+    .author-box__image {
+      width: 5.5rem;
+      height: 5.5rem;
+    }
+  }
+</style>
