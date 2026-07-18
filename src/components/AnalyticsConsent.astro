@@ -50,13 +50,13 @@
 
   const initializeDataLayer = () => {
     const analyticsWindow = window as typeof window & {
-      dataLayer: unknown[][];
+      dataLayer: unknown[];
       gtag: (...args: unknown[]) => void;
     };
 
     analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
-    analyticsWindow.gtag = (...args: unknown[]) => {
-      analyticsWindow.dataLayer.push(args);
+    analyticsWindow.gtag = function gtag(..._args: unknown[]) {
+      analyticsWindow.dataLayer.push(arguments);
     };
 
     return analyticsWindow.gtag;
