@@ -84,3 +84,7 @@ Looking back, my instinct was to build something far more sophisticated than I a
 ## Final thoughts
 
 The most valuable part of the project wasn't the code, but realising that AI became far more useful once I stopped asking it to replace my expertise, and started using it to focus that expertise instead.
+
+__Read more:__ [I Built a Website from Scratch with AI as a Non-Developer. Here’s What I Learned.](https://iidalehtonen.com/writing/should-you-build-your-website-with-ai/) 
+
+ [Can AI Read Your Website? Why Rendering Matters for AI Search](https://iidalehtonen.com/writing/can-ai-read-your-website/)

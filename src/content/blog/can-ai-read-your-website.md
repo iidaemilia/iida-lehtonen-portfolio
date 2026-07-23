@@ -157,3 +157,5 @@ Ironically, that makes the fundamentals more valuable, not less.
 You do not need to become a software engineer. But if discoverability matters, you do need to ask what HTML the site delivers, what depends on JavaScript and whether the main content is accessible before scripts run. Those questions influence the reach of every article, landing page and resource you publish.
 
 AI can help build the website. It cannot decide what "findable" needs to mean for your content strategy. That remains a human judgement.
+
+__Read more:__ [How Do You Stay Aware of Meaningful SEO Changes on a Website with 25,000 URLs?](https://iidalehtonen.com/writing/how-do-you-stay-aware-of-meaningful-seo-changes/) 

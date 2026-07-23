@@ -180,8 +180,8 @@ As a Website Content Manager, that shift felt surprisingly natural. My backgroun
 
 I don't think AI removes the need to understand how websites are built.
 
-If anything, it makes that understanding even more valuable.
+If anything, it makes that understanding even more valuable.Because AI can generate almost anything. Knowing which version is worth shipping is still a human decision.
 
-Because AI can generate almost anything.
+__Read more:__ [How Do You Stay Aware of Meaningful SEO Changes on a Website with 25,000 URLs?](https://iidalehtonen.com/writing/how-do-you-stay-aware-of-meaningful-seo-changes/)
 
-Knowing which version is worth shipping is still a human decision.
+[Can AI Read Your Website? Why Rendering Matters for AI Search](https://iidalehtonen.com/writing/can-ai-read-your-website/)
