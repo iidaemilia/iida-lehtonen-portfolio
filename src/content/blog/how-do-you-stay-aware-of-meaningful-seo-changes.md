@@ -17,6 +17,16 @@ tags:
   - Data analysis
   - AI
 
+faq:
+  - question: "How can I prioritise SEO changes across thousands of URLs without reviewing every page?"
+    answer: "Use a weighted scoring process to create a shortlist for manual review. The described tool processes a Google Search Console CSV export, combines changes in clicks, average position and CTR over the previous 28 days, and weights those changes by impression volume. This reduces approximately 25,000 URLs to around 15 pages that are more likely to deserve attention."
+  - question: "Which SEO metrics should be considered when deciding whether a ranking change matters?"
+    answer: "Look at changes in clicks, average position and CTR together, while also considering impressions. The workflow does not focus on traffic loss alone: it combines these changes over the previous 28 days and gives greater weight to pages with higher impression volumes, since changes on highly visible pages are more likely to matter to the business."
+  - question: "Can AI automatically explain why a page’s organic traffic dropped?"
+    answer: "Not reliably from Google Search Console data alone. A traffic decline may reflect a temporary event rather than an SEO problem—for example, one page had gained unusual traffic after being mentioned in a widely shared news story, then returned to normal afterward. The data and an AI model could identify the numerical change, but not the external context, so human review remains necessary."
+  - question: "What should an SEO prioritisation tool automate, and what should remain manual?"
+    answer: "It should automate repetitive data processing and prioritisation, while leaving interpretation and decisions to an SEO professional. In this workflow, Python cleans the Search Console export, scores the URLs and creates an Excel shortlist, but the person familiar with the website reviews the pages and decides whether deeper investigation or optimisation is warranted."
+
 draft: false
 ---
 Google Search Console already holds the data SEO professionals need. The problem starts once a website grows to tens of thousands of pages: knowing which changes actually matter becomes surprisingly difficult. I built a lightweight Python tool that processes a Search Console export, prioritises the URLs most relevant to my work, and outputs an Excel report with around fifteen pages worth a manual look.
