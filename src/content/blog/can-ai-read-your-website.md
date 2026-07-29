@@ -158,4 +158,6 @@ You do not need to become a software engineer. But if discoverability matters, y
 
 AI can help build the website. It cannot decide what "findable" needs to mean for your content strategy. That remains a human judgement.
 
-__Read more:__ [How Do You Stay Aware of Meaningful SEO Changes on a Website with 25,000 URLs?](https://iidalehtonen.com/writing/how-do-you-stay-aware-of-meaningful-seo-changes/) 
+__Read more:__ [How Do You Stay Aware of Meaningful SEO Changes on a Website with 25,000 URLs?](https://iidalehtonen.com/writing/how-do-you-stay-aware-of-meaningful-seo-changes/)
+
+[Do FAQs Matter for AI Search? I Built an FAQ Generator, Then Checked the Evidence](https://iidalehtonen.com/writing/do-faqs-matter-for-ai-search/)

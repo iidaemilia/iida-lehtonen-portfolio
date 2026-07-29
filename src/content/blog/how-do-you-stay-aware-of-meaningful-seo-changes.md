@@ -98,3 +98,5 @@ The most valuable part of the project wasn't the code, but realising that AI bec
 __Read more:__ [I Built a Website from Scratch with AI as a Non-Developer. Here’s What I Learned.](https://iidalehtonen.com/writing/should-you-build-your-website-with-ai/) 
 
  [Can AI Read Your Website? Why Rendering Matters for AI Search](https://iidalehtonen.com/writing/can-ai-read-your-website/)
+
+[Do FAQs Matter for AI Search? I Built an FAQ Generator, Then Checked the Evidence](https://iidalehtonen.com/writing/do-faqs-matter-for-ai-search/)
