@@ -146,6 +146,8 @@ Content substance, mostly. The [Princeton GEO research](https://arxiv.org/abs/23
 
 Which, if you think about it, is exactly what the prompt lesson from my tool was. "Start from the reader's information need" isn't just a prompting trick. It's the actual mechanism behind AI visibility. AI assistants are answering real questions, so the content that gets used is content that answers real questions — whether or not it's wrapped in an accordion and a JSON-LD block.
 
+**Read more:** [SEO vs. AEO vs. GEO: What's Actually Different (and What Isn't)](https://iidalehtonen.com/writing/seo-vs-aeo-vs-geo/)
+
 ## My honest conclusion
 
 Here's where I land, and it's less exciting than the GEO sales pitch but more useful:
