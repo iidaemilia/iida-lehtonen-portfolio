@@ -19,7 +19,7 @@ tags:
 faq:
   - question: "What is the difference between SEO, AEO and GEO?"
     answer: "SEO optimizes pages to rank in a list of search results, AEO optimizes passages to be chosen as the direct answer, and GEO optimizes your brand's presence inside AI-generated answers. They are layers of the same system, not competing disciplines. The foundations overlap heavily; the surfaces and metrics differ."
-  - question: Is GEO replacing SEO?"
+  - question: "Is GEO replacing SEO?"
     answer: "No. Generative engines retrieve their sources from the same search indexes that power Google and Bing, so a page that cannot be crawled and indexed cannot be cited either. SEO is the foundation GEO stands on. What is changing is where visibility gets decided: increasingly also on sites you do not own."
   - question: "How do I get my brand mentioned in ChatGPT and other AI answers?"
     answer: "Start with the basics: make sure your site is indexed, crawlable by AI bots, and structured so that clear answers can be lifted from it. Then work on the part most brands skip: your presence on third-party sources such as media coverage, reviews, forums and expert content, because in discovery questions those are the sources AI engines cite most. There is no trick that guarantees a mention, and anyone promising one is overselling."
@@ -42,11 +42,13 @@ These two facts sound like a contradiction. They are not. They describe differen
 
 ## The 30-second answer
 
+One honest note first: the industry uses these terms in conflicting ways, which is part of the confusion this article is about. So these are my working definitions. In this article, AEO means extractive, direct-answer systems, and GEO means generative, synthesized answers.
+
 **SEO (Search Engine Optimization)** means optimizing to rank in a list of search results. The unit of competition is the page. The reward is the click.
 
 **AEO (Answer Engine Optimization)** means getting your text chosen as the direct, single answer to a query: featured snippets, voice search, zero-click answer boxes. The unit of competition is the passage. The reward is being picked as the answer.
 
-**GEO (Generative Engine Optimization)** means making sure your brand or site is synthesized, mentioned and cited as a recommended resource inside broader conversational AI answers: ChatGPT, Perplexity, Gemini, Claude, AI Overviews. The unit of competition is your brand as a whole, across the entire web, not just your own site. The reward is presence in the answer, often without any click at all.
+**GEO (Generative Engine Optimization)** means making sure your brand or site gets synthesized, mentioned and cited as a recommended resource inside broader conversational AI answers: ChatGPT, Perplexity, Gemini, Claude, AI Overviews. The unit of competition expands beyond the page: to your brand, its content, and the sources that describe it across the web. The reward is presence in the answer, often without any click at all.
 
 The most important thing to understand: **these are layers, not replacements.** Generative engines pull heavily from the web's search indexes. In early 2025, [Seer Interactive found that 87% of ChatGPT Search citations matched Bing's top organic results](https://www.seerinteractive.com/insights/87-percent-of-searchgpt-citations-match-bings-top-results). Since then the mix has shifted: independent tests in 2025 and 2026 indicate that ChatGPT also taps Google's index for many users, and OpenAI runs its own search crawler, so no single engine's rankings predict citations as neatly anymore. The principle, however, has only grown stronger: your content has to live in some search index to be retrieved at all. If a page cannot be crawled and indexed, no GEO tactic will save it. SEO is the foundation. AEO made content easy to extract. GEO extends the competition from your own website to the entire conversation about your brand.
 
@@ -74,7 +76,7 @@ The data points in the same direction. In early 2025, [a study by Seer Interacti
 
 And the tactics? Look at what [the research on AI visibility](https://arxiv.org/abs/2311.09735) actually recommends: clear answer-first structure, quotable statements, cited statistics, expert quotes, structured data, passages that work on their own. Now compare that to what AEO best practice has recommended since featured snippets appeared, and what quality-focused SEO has recommended for over a decade. It is the same list. (I tested one part of this myself: [whether FAQ content actually matters for AI search](https://iidalehtonen.com/writing/do-faqs-matter-for-ai-search/). The answer was, fittingly, yes and no at the same time.)
 
-I have not yet found a single evidence-backed GEO tactic that would hurt your SEO, or the other way around. So when someone offers to "do GEO" for you as something separate from SEO, ask them what exactly they would do differently, and what evidence supports it. The honest answer is that the work on your own site overlaps almost completely. The real difference is somewhere else: outside your site. That brings me to the part that actually is new.
+I have not yet found a credible, evidence-backed GEO tactic that inherently conflicts with good SEO. You can of course execute badly: over-structure a page, write it so generic that it converts nobody. But then the problem is the execution, not the discipline. So when someone offers to "do GEO" for you as something separate from SEO, ask them what exactly they would do differently, and what evidence supports it. The honest answer is that the work on your own site overlaps almost completely. The real difference is somewhere else: outside your site. That brings me to the part that actually is new.
 
 ## The genuinely new part: top of mind is built on sites you don't own
 
@@ -84,7 +86,7 @@ To be fair, the numbers depend on the type of question. [A Yext study of 6.8 mil
 
 I see this play out at national scale in very concrete ways. A story that Finland's largest news outlet wrote about one of our products has become a more cited source in AI tools than our own product pages. Read that again: the earned article beats the owned content on the very surface where buying decisions increasingly begin. If your SEO team ever needed a business case for working closely with the PR team, this is it.
 
-And it does not stop at traditional media. In my own monitoring, I see social content appear as a cited source in AI answers more and more often: individual LinkedIn posts and articles, even Instagram profiles. The engines do not draw a line between "official" and "unofficial" sources. They cite what they can find and what they have learned to trust.
+And it does not stop at traditional media. My own monitoring is small and directional, but in it I see social content appear as a cited source in AI answers more and more often: individual LinkedIn posts and articles, even Instagram profiles. The engines do not draw a line between "official" and "unofficial" sources. They cite what they can find and what they have learned to trust.
 
 For marketing teams, this breaks an old wall in the org chart. SEO and PR have been separate functions with separate budgets and separate KPIs for as long as I have worked in this field. AI engines do not care about our org charts. Visibility is no longer only about optimizing your own content. It is about how your brand is talked about everywhere else. If I had to name the single biggest strategic change GEO brings, it is this one.
 
@@ -103,7 +105,7 @@ So, in summary: the foundations (crawling, indexing, authority) are well establi
 If good GEO is mostly good SEO, what changes in practice? Honestly assessed, four things:
 
 1. **Measure a new thing.** Add AI share-of-voice tracking to your reporting: a fixed set of buyer questions, run regularly across the main AI engines, with a log of whether and how your brand appears. You cannot manage something you have never once looked at.
-2. **Check your access for AI crawlers.** Make sure GPTBot, PerplexityBot, ClaudeBot and friends are not blocked by your robots.txt or your CDN's default settings. It is a five-minute check and a surprisingly common failure.
+2. **Decide, on purpose, which AI crawlers you allow.** Some companies have good reasons to block certain bots: content rights, or the difference between training crawlers and search crawlers. The failure mode is not blocking itself. It is blocking or allowing by accident, through a robots.txt line or a CDN default you did not know existed. Check GPTBot, PerplexityBot, ClaudeBot and friends, and make it a decision instead of an accident.
 3. **Bring earned media into your search strategy.** Treat PR, reviews, community presence and expert commentary as visibility infrastructure, not as a separate discipline. Budget accordingly.
 4. **Keep doing excellent SEO and answer-first content.** Not as a legacy activity, but as the foundation everything above sits on. The channel that still drives the revenue deserves better than obituaries.
 
