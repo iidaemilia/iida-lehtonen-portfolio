@@ -1,10 +1,16 @@
+---
+import { Image } from "astro:assets";
+import iidaPortrait from "../assets/images/iida.jpg";
+---
+
 <aside class="author-box" aria-label="About the author">
-  <img
+  <Image
     class="author-box__image"
-    src="/images/iida.jpg"
+    src={iidaPortrait}
     alt="Iida Lehtonen"
-    width="160"
-    height="160"
+    widths={[112, 224]}
+    sizes="112px"
+    format="webp"
     loading="lazy"
   />
 
