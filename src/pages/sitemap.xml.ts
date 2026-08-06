@@ -22,6 +22,7 @@ export const GET: APIRoute = async ({ site }) => {
   const articles = await getCollection("blog", ({ data }) => !data.draft);
   const pages = [
     { url: new URL("/", site), lastmod: undefined },
+    { url: new URL("/about/", site), lastmod: undefined },
     { url: new URL("/writing/", site), lastmod: undefined },
     { url: new URL("/privacy/", site), lastmod: undefined },
     ...articles.map((article) => ({

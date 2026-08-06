@@ -1,0 +1,161 @@
+---
+import { Image } from "astro:assets";
+import iidaPortrait from "../assets/images/iida.jpg";
+import Container from "../components/Container.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const faq = [
+  { question: "Who is Iida Lehtonen?", answer: "Iida Lehtonen is a digital strategist based in Finland who works on SEO, AI search (GEO), content strategy and AI-assisted workflows. She leads organic search and generative engine optimisation in-house for a large Finnish consumer-facing organisation, has worked in digital marketing for over nine years, and writes about search and AI at iidalehtonen.com. Several people in Finland share this name; this site belongs to the Iida Lehtonen who works in SEO and AI search." },
+  { question: "Is Iida Lehtonen an SEO and GEO expert in Finland?", answer: "She works full-time on SEO and GEO in Finland, in-house rather than agency-side, on a website in the tens of thousands of URLs. Her published work focuses on generative engine optimisation, AI search citation behaviour, technical SEO and AI-assisted marketing workflows, and is based on her own testing rather than on vendor claims." },
+  { question: "What does Iida Lehtonen write about?", answer: "SEO, AEO and GEO and how they differ; whether FAQ content matters for AI search; how website rendering affects what AI systems can read; monitoring search performance at scale; and building websites and tools with AI as a non-developer." },
+  { question: "Where is Iida Lehtonen based?", answer: "Finland." },
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Iida Lehtonen",
+    url: "https://iidalehtonen.com/about/",
+    jobTitle: "Website Content Manager",
+    knowsAbout: ["SEO", "Generative Engine Optimisation", "AI Search", "Content Strategy", "Digital Customer Experience"],
+    sameAs: ["https://www.linkedin.com/in/iidaemilia/", "https://github.com/iidaemilia"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="About Iida Lehtonen | SEO, AI Search & Content Strategy"
+  description="Iida Lehtonen is a Finland-based digital strategist working across SEO, AI search, content strategy and AI-assisted workflows."
+  schema={schema}
+>
+  <Header />
+
+  <main class="about-page">
+    <Container>
+      <header class="about-hero">
+        <div class="about-hero__content">
+          <p class="eyebrow">About Iida Lehtonen</p>
+          <h1>Digital Growth, SEO and AI Search</h1>
+          <p class="about-hero__lead">I help organizations get found, and turn that visibility into growth that shows up in the numbers.</p>
+          <p>I am responsible for SEO and generative engine optimization (GEO) in-house in Finnish telecommunications, on a site running to tens of thousands of pages.</p>
+          <p>When search visibility is built properly, the effect on the business can be much larger than people expect. In one established consumer product area, rebuilding the entire content and search setup drove an 800% increase in organic traffic over three months. Organic conversions were 40% higher than in the preceding three-month period.</p>
+        </div>
+
+        <div class="about-hero__image">
+          <Image src={iidaPortrait} alt="Portrait of Iida Lehtonen" widths={[400, 640, 800]} sizes="(max-width: 800px) calc(100vw - 2rem), 34vw" format="webp" loading="eager" fetchpriority="high" />
+        </div>
+      </header>
+
+      <div class="about-content">
+        <section>
+          <p class="eyebrow">What I do</p>
+          <h2>Organic growth at enterprise scale</h2>
+          <p class="section-lead">I find the organic growth a business is missing, and build the strategy and content that captures it.</p>
+          <p>Three things, which in most organizations sit with three different people:</p>
+          <div class="work-grid">
+            <article><h3>SEO and organic growth</h3><p>Technical SEO, content SEO and information architecture, plus the standards that keep a large site working when nobody can review it page by page. I work with the business managers who own those areas on what gets built and what gets retired, and I report on what the work produced.</p></article>
+            <article><h3>AI search and GEO</h3><p>How generative engines retrieve, synthesise and cite sources, and what that means for a brand. GEO is a young field in which commercial certainty often runs ahead of the evidence, so I run my own weekly measurement across ChatGPT, Google AI Overviews and Claude and publish what the data supports, including when it undercuts a conclusion I would prefer.</p></article>
+            <article><h3>Content strategy and digital customer experience</h3><p>Content is where most customers form their first impression of a company, and one of the most direct levers on growth there is. I plan it around what the customer is actually trying to do, and keep it working from launch through its whole lifecycle.</p></article>
+            <article><h3>Analytics, AI and automation</h3><p>Measuring whether the work produced anything, and building the tools that make that practical. A Search Console change detector that turns a day of spreadsheet work into a fifteen URL shortlist, an FAQ generator, this website. I am not a developer, but I build when building is the fastest way to test an idea.</p></article>
+          </div>
+          <h3>Why this combination matters now</h3>
+          <p>Search is no longer confined to a results page. Organizations still need the foundations of good SEO, while also learning how their brands, content and third-party presence are interpreted and cited in AI-generated answers. The evidence is still developing, which is why I measure before I recommend.</p>
+        </section>
+
+        <section class="prose-section">
+          <p class="eyebrow">How I think about this field</p>
+          <h2>Evidence before acronyms</h2>
+          <p>Search marketing has a chronic credibility problem. Every eighteen months a new acronym arrives, usually invented by someone who sells software for it, and the claims run several years ahead of the evidence.</p>
+          <p>I try to work the other way round. When I make a claim, I want to be able to point at either a controlled study, a dataset, or something I broke myself. When the evidence is thin, I say so — including when it is thin in favour of a conclusion I like. </p>
+        </section>
+
+        <section>
+          <p class="eyebrow">Things I have built</p>
+          <h2>Small tools for real work</h2>
+          <div class="project-list">
+            <article><h3>FAQ generator</h3><p>An FAQ generator that drafts FAQ sections from existing page content, built to test whether FAQ content actually affects AI search visibility.</p><a href="/writing/do-faqs-matter-for-ai-search/">Read what the evidence showed →</a></article>
+            <article><h3>Search Console change detector</h3><p>A Python tool that narrows 25,000 URLs down to roughly fifteen worth a human look.</p><a href="/writing/how-do-you-stay-aware-of-meaningful-seo-changes/">Read the write-up →</a></article>
+            <article><h3>This website</h3><p>Designed, written and built with Astro, largely with AI assistance, as a non-developer.</p><a href="/writing/should-you-build-your-website-with-ai/">Read what I learned →</a></article>
+          </div>
+        </section>
+
+        <section>
+          <p class="eyebrow">Frequently asked</p>
+          <h2>Frequently asked questions about me</h2>
+          <div class="faq-list">
+            {faq.map(({ question, answer }, index) => (
+              <details open={index === 0}>
+                <summary><h3>{question}</h3><span aria-hidden="true">+</span></summary>
+                <p>{answer}</p>
+                {question === "What does Iida Lehtonen write about?" && <a href="/writing/">Browse all writing →</a>}
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section class="elsewhere-section">
+          <p class="eyebrow">Elsewhere</p>
+          <h2>Find me online</h2>
+          <div class="elsewhere-links">
+            <a href="https://www.linkedin.com/in/iidaemilia/" target="_blank" rel="noopener noreferrer">LinkedIn <span>where I publish most often</span></a>
+            <a href="https://github.com/iidaemilia" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="mailto:iida.e.lehtonen@gmail.com">Email</a>
+          </div>
+        </section>
+      </div>
+    </Container>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .about-page { padding-top: 5.5rem; }
+  .about-hero { display: grid; grid-template-columns: 1.45fr 0.75fr; gap: var(--space-xl); align-items: center; padding-block: clamp(4rem, 9vw, 8rem); }
+  .about-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+  .about-hero__lead, .section-lead { color: var(--color-text); font-size: clamp(1.25rem, 2.5vw, 1.65rem); line-height: 1.5; }
+  .about-hero__image { aspect-ratio: 4 / 5; overflow: hidden; border-radius: 12px; }
+  .about-hero__image :global(img) { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 50% 35%; }
+  .eyebrow { color: var(--color-accent); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+  .about-content { width: min(100%, 62rem); margin-inline: auto; }
+  .about-content section { padding-block: var(--space-lg); border-top: 1px solid rgba(255,255,255,.08); }
+  .about-content h2 { margin: var(--space-sm) 0 var(--space-md); }
+  .about-content h3 { font-family: var(--font-heading); font-size: 1.65rem; }
+  .about-content a { color: var(--color-text); text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: .25em; }
+  .work-grid, .project-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
+  .work-grid article, .project-list article { padding-top: var(--space-sm); border-top: 2px solid var(--color-accent); }
+  .work-grid p, .project-list p { margin-top: var(--space-sm); }
+  .project-list article:last-child { grid-column: 1 / -1; }
+  .project-list a { display: inline-block; margin-top: var(--space-sm); font-size: .9rem; font-weight: 600; }
+  .prose-section > p:not(.eyebrow) { max-width: 50rem; margin-bottom: var(--space-sm); font-size: 1.08rem; }
+  .faq-list details { border-top: 1px solid rgba(255,255,255,.12); }
+  .faq-list details:last-child { border-bottom: 1px solid rgba(255,255,255,.12); }
+  .faq-list summary { display: flex; justify-content: space-between; align-items: center; gap: var(--space-sm); padding-block: 1.25rem; cursor: pointer; list-style: none; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary span { color: var(--color-accent); font-size: 1.5rem; }
+  .faq-list details[open] summary span { transform: rotate(45deg); }
+  .faq-list details > p, .faq-list details > a { display: block; max-width: 48rem; margin-bottom: 1.25rem; }
+  .elsewhere-links { display: flex; flex-wrap: wrap; gap: var(--space-md); }
+  .elsewhere-links a { padding: 1rem 1.25rem; border: 1px solid var(--color-accent); text-decoration: none; }
+  .elsewhere-links span { color: var(--color-text-muted); font-size: .85rem; }
+
+  @media (max-width: 800px) {
+    .about-hero { grid-template-columns: 1fr; gap: var(--space-lg); padding-block: var(--space-lg); }
+    .about-hero__image { grid-row: 1; width: min(100%, 26rem); }
+    .work-grid, .project-list { grid-template-columns: 1fr; gap: var(--space-md); }
+    .project-list article:last-child { grid-column: auto; }
+    .elsewhere-links { flex-direction: column; }
+  }
+</style>
