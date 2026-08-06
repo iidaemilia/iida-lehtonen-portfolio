@@ -77,11 +77,18 @@ import Container from "./Container.astro";
       gap: var(--space-xs);
     }
 
+    .about__image {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
     .about__image img {
       width: 100%;
+      height: 100%;
       display: block;
-      border-radius: 12px;
       object-fit: cover;
+      object-position: 50% 35%;
     }
 
     .about__stats {
