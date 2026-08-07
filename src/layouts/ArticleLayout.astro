@@ -23,6 +23,10 @@ interface Frontmatter {
     question: string;
     answer: string;
   }[];
+  sources?: {
+    title: string;
+    url: string;
+  }[];
 }
 
 interface Props {
@@ -156,6 +160,20 @@ const schemas = faqSchema ? [articleSchema, faqSchema] : articleSchema;
           </section>
         )}
 
+        {frontmatter.sources && (
+          <section
+            class="article__sources article__body"
+            aria-labelledby="article-sources-title"
+          >
+            <h2 id="article-sources-title">Sources</h2>
+            <ul>
+              {frontmatter.sources.map(({ title, url }) => (
+                <li><a href={url}>{title}</a></li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         <div class="article__footer">
           <div class="article__tags" aria-label="Article topics">
             {frontmatter.tags.map((tag) => <span>{tag}</span>)}
@@ -250,6 +268,12 @@ const schemas = faqSchema ? [articleSchema, faqSchema] : articleSchema;
   .article__faq {
     width: min(100%, 50rem);
     margin-top: clamp(4rem, 8vw, 6rem);
+  }
+
+  .article__sources {
+    margin-top: clamp(3rem, 6vw, 4rem);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .article__faq > h2 {

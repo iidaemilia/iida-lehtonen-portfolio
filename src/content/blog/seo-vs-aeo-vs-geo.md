@@ -118,3 +118,7 @@ If good GEO is mostly good SEO, what changes in practice? Honestly assessed, fou
 **"AEO and GEO are the same thing."** Different surfaces and different units of competition. AEO competes for a passage. GEO competes for a brand.
 
 **"You can guarantee AI visibility."** The answers change from day to day, and the research is two years old and full of open questions. Anyone selling guarantees is selling snake oil.
+
+__Read more:__
+
+[Does YouTube Actually Help AI Search Visibility? I Checked Google, ChatGPT, Claude and Gemini.](https://iidalehtonen.com/writing/youtube-ai-search-visibility/)

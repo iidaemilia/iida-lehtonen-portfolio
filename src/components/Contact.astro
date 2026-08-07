@@ -15,10 +15,10 @@ import Container from "../components/Container.astro";
           </p>
         </div>
 
-        <div class="contact__links">
-          <a href="https://www.linkedin.com/in/iidaemilia/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/iidaemilia" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="mailto:iida.e.lehtonen@gmail.com">Email</a>
+        <div class="contact__links button-group">
+          <a class="button-link" href="https://www.linkedin.com/in/iidaemilia/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="button-link" href="https://github.com/iidaemilia" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button-link" href="mailto:iida.e.lehtonen@gmail.com">Email</a>
         </div>
       </div>
     </Container>
@@ -63,44 +63,7 @@ import Container from "../components/Container.astro";
 }
 
 .contact__links {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  gap: var(--space-md);
-  flex-wrap: wrap;
   margin-top: var(--space-sm);
-}
-
-.contact__links a {
-  padding: 0.85rem 1.4rem;
-  min-height: 56px;
-  min-width: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-  font-size: 1.05rem;
-  border-radius: 0;
-  background: transparent;
-  border: 1px solid var(--color-accent);
-  color: var(--color-text);
-  text-decoration: none;
-  transition: border-color .2s ease, transform .2s ease;
-}
-
-.contact__links a:hover {
-  background: rgba(212, 175, 55, 0.08);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .contact__links {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .contact__links a {
-    width: 100%;
-  }
 }
 </style>

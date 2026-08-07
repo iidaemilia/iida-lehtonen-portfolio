@@ -7,10 +7,10 @@ import Header from "../components/Header.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const faq = [
-  { question: "Who is Iida Lehtonen?", answer: "Iida Lehtonen is a digital strategist based in Finland who works on SEO, AI search (GEO), content strategy and AI-assisted workflows. She leads organic search and generative engine optimisation in-house for a large Finnish consumer-facing organisation, has worked in digital marketing for over nine years, and writes about search and AI at iidalehtonen.com. Several people in Finland share this name; this site belongs to the Iida Lehtonen who works in SEO and AI search." },
-  { question: "Is Iida Lehtonen an SEO and GEO expert in Finland?", answer: "She works full-time on SEO and GEO in Finland, in-house rather than agency-side, on a website in the tens of thousands of URLs. Her published work focuses on generative engine optimisation, AI search citation behaviour, technical SEO and AI-assisted marketing workflows, and is based on her own testing rather than on vendor claims." },
-  { question: "What does Iida Lehtonen write about?", answer: "SEO, AEO and GEO and how they differ; whether FAQ content matters for AI search; how website rendering affects what AI systems can read; monitoring search performance at scale; and building websites and tools with AI as a non-developer." },
-  { question: "Where is Iida Lehtonen based?", answer: "Finland." },
+  { question: "Who is Iida Lehtonen?", answer: "I'm a digital strategist based in Finland, working on SEO, AI search (GEO), content strategy and AI-assisted workflows. I lead organic search and generative engine optimisation in-house for a large Finnish consumer-facing organisation, where my work connects search visibility directly to business results. I've worked in digital marketing for over nine years, and I write about search and AI here at iidalehtonen.com. Several people in Finland share this name — this site belongs to me, the Iida Lehtonen who works in SEO and AI search." },
+  { question: "Is Iida Lehtonen an SEO and GEO expert in Finland?", answer: "I work full-time on SEO and GEO in Finland, in-house rather than agency-side, on a website in the tens of thousands of URLs. Everything I publish about generative engine optimisation, AI search citation behaviour, technical SEO and AI-assisted marketing workflows is based on my own testing at scale — not on vendor claims. My focus is on what actually moves numbers: traffic that converts, visibility that supports business goals, and strategies that hold up as AI reshapes how brands are discovered." },
+  { question: "What does Iida Lehtonen write about?", answer: "I write about SEO, AEO and GEO and how they differ; whether FAQ content matters for AI search; how website rendering affects what AI systems can read; monitoring search performance at scale; and building websites and tools with AI as a non-developer. Increasingly, I also write about where discoverability is heading as AI becomes the first touchpoint between brands and customers — and what marketing teams should do about it now." },
+  { question: "Does Iida Lehtonen give talks or trainings on GEO and AI search?", answer: "Yes — I give talks, trainings and workshops on GEO, AI search visibility and AI-assisted marketing workflows for marketing teams and leadership. If you'd like to discuss a talk, a workshop or a collaboration, get in touch: iida.e.lehtonen@gmail.com or LinkedIn." },
 ];
 
 const schema = [
@@ -63,7 +63,6 @@ const schema = [
           <p class="eyebrow">What I do</p>
           <h2>Organic growth at enterprise scale</h2>
           <p class="section-lead">I find the organic growth a business is missing, and build the strategy and content that captures it.</p>
-          <p>Three things, which in most organizations sit with three different people:</p>
           <div class="work-grid">
             <article><h3>SEO and organic growth</h3><p>Technical SEO, content SEO and information architecture, plus the standards that keep a large site working when nobody can review it page by page. I work with the business managers who own those areas on what gets built and what gets retired, and I report on what the work produced.</p></article>
             <article><h3>AI search and GEO</h3><p>How generative engines retrieve, synthesise and cite sources, and what that means for a brand. GEO is a young field in which commercial certainty often runs ahead of the evidence, so I run my own weekly measurement across ChatGPT, Google AI Overviews and Claude and publish what the data supports, including when it undercuts a conclusion I would prefer.</p></article>
@@ -82,23 +81,19 @@ const schema = [
         </section>
 
         <section>
-          <p class="eyebrow">Things I have built</p>
-          <h2>Small tools for real work</h2>
-          <div class="project-list">
-            <article><h3>FAQ generator</h3><p>An FAQ generator that drafts FAQ sections from existing page content, built to test whether FAQ content actually affects AI search visibility.</p><a href="/writing/do-faqs-matter-for-ai-search/">Read what the evidence showed →</a></article>
-            <article><h3>Search Console change detector</h3><p>A Python tool that narrows 25,000 URLs down to roughly fifteen worth a human look.</p><a href="/writing/how-do-you-stay-aware-of-meaningful-seo-changes/">Read the write-up →</a></article>
-            <article><h3>This website</h3><p>Designed, written and built with Astro, largely with AI assistance, as a non-developer.</p><a href="/writing/should-you-build-your-website-with-ai/">Read what I learned →</a></article>
-          </div>
-        </section>
-
-        <section>
           <p class="eyebrow">Frequently asked</p>
-          <h2>Frequently asked questions about me</h2>
+          <h2>Questions and answers</h2>
           <div class="faq-list">
             {faq.map(({ question, answer }, index) => (
               <details open={index === 0}>
                 <summary><h3>{question}</h3><span aria-hidden="true">+</span></summary>
-                <p>{answer}</p>
+                {question === "Does Iida Lehtonen give talks or trainings on GEO and AI search?" ? (
+                  <p>
+                    Yes — I give talks, trainings and workshops on GEO, AI search visibility and AI-assisted marketing workflows for marketing teams and leadership. If you'd like to discuss a talk, a workshop or a collaboration, get in touch: <a href="mailto:iida.e.lehtonen@gmail.com">iida.e.lehtonen@gmail.com</a> or <a href="https://www.linkedin.com/in/iidaemilia/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+                  </p>
+                ) : (
+                  <p>{answer}</p>
+                )}
                 {question === "What does Iida Lehtonen write about?" && <a href="/writing/">Browse all writing →</a>}
               </details>
             ))}
@@ -108,10 +103,10 @@ const schema = [
         <section class="elsewhere-section">
           <p class="eyebrow">Elsewhere</p>
           <h2>Find me online</h2>
-          <div class="elsewhere-links">
-            <a href="https://www.linkedin.com/in/iidaemilia/" target="_blank" rel="noopener noreferrer">LinkedIn <span>where I publish most often</span></a>
-            <a href="https://github.com/iidaemilia" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="mailto:iida.e.lehtonen@gmail.com">Email</a>
+          <div class="button-group">
+            <a class="button-link" href="https://www.linkedin.com/in/iidaemilia/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="button-link" href="https://github.com/iidaemilia" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button-link" href="mailto:iida.e.lehtonen@gmail.com">Email</a>
           </div>
         </section>
       </div>
@@ -125,21 +120,28 @@ const schema = [
   .about-page { padding-top: 5.5rem; }
   .about-hero { display: grid; grid-template-columns: 1.45fr 0.75fr; gap: var(--space-xl); align-items: center; padding-block: clamp(4rem, 9vw, 8rem); }
   .about-hero__content { display: flex; flex-direction: column; gap: var(--space-md); }
+  .about-hero h1 { font-size: clamp(4rem, 9vw, 7rem); }
   .about-hero__lead, .section-lead { color: var(--color-text); font-size: clamp(1.25rem, 2.5vw, 1.65rem); line-height: 1.5; }
   .about-hero__image { aspect-ratio: 4 / 5; overflow: hidden; border-radius: 12px; }
   .about-hero__image :global(img) { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 50% 35%; }
   .eyebrow { color: var(--color-accent); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
   .about-content { width: min(100%, 62rem); margin-inline: auto; }
   .about-content section { padding-block: var(--space-lg); border-top: 1px solid rgba(255,255,255,.08); }
-  .about-content h2 { margin: var(--space-sm) 0 var(--space-md); }
+  .about-content h2 { margin: var(--space-sm) 0 var(--space-md); font-size: clamp(2.25rem, 5vw, 3.75rem); }
   .about-content h3 { font-family: var(--font-heading); font-size: 1.65rem; }
   .about-content a { color: var(--color-text); text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: .25em; }
+  .about-content .button-link { text-decoration: none; }
   .work-grid, .project-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
   .work-grid article, .project-list article { padding-top: var(--space-sm); border-top: 2px solid var(--color-accent); }
+  .work-grid + h3 { margin-top: var(--space-lg); }
   .work-grid p, .project-list p { margin-top: var(--space-sm); }
   .project-list article:last-child { grid-column: 1 / -1; }
   .project-list a { display: inline-block; margin-top: var(--space-sm); font-size: .9rem; font-weight: 600; }
   .prose-section > p:not(.eyebrow) { max-width: 50rem; margin-bottom: var(--space-sm); font-size: 1.08rem; }
+  .timeline { margin: var(--space-md) 0 0; padding: 0; list-style: none; }
+  .timeline li { display: grid; grid-template-columns: 9rem 1fr; gap: var(--space-md); padding-block: 1rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .timeline strong { color: var(--color-accent); }
+  .timeline .placeholder { color: var(--color-text-muted); }
   .faq-list details { border-top: 1px solid rgba(255,255,255,.12); }
   .faq-list details:last-child { border-bottom: 1px solid rgba(255,255,255,.12); }
   .faq-list summary { display: flex; justify-content: space-between; align-items: center; gap: var(--space-sm); padding-block: 1.25rem; cursor: pointer; list-style: none; }
@@ -147,15 +149,11 @@ const schema = [
   .faq-list summary span { color: var(--color-accent); font-size: 1.5rem; }
   .faq-list details[open] summary span { transform: rotate(45deg); }
   .faq-list details > p, .faq-list details > a { display: block; max-width: 48rem; margin-bottom: 1.25rem; }
-  .elsewhere-links { display: flex; flex-wrap: wrap; gap: var(--space-md); }
-  .elsewhere-links a { padding: 1rem 1.25rem; border: 1px solid var(--color-accent); text-decoration: none; }
-  .elsewhere-links span { color: var(--color-text-muted); font-size: .85rem; }
-
   @media (max-width: 800px) {
     .about-hero { grid-template-columns: 1fr; gap: var(--space-lg); padding-block: var(--space-lg); }
     .about-hero__image { grid-row: 1; width: min(100%, 26rem); }
     .work-grid, .project-list { grid-template-columns: 1fr; gap: var(--space-md); }
     .project-list article:last-child { grid-column: auto; }
-    .elsewhere-links { flex-direction: column; }
+    .timeline li { grid-template-columns: 1fr; gap: .35rem; }
   }
 </style>

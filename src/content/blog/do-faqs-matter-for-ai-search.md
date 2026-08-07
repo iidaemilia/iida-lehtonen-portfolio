@@ -164,6 +164,8 @@ __Read more:__
 
 [Can AI Read Your Website? Why Rendering Matters for AI Search](https://iidalehtonen.com/writing/can-ai-read-your-website/)
 
+[Does YouTube Actually Help AI Search Visibility? I Checked Google, ChatGPT, Claude and Gemini.](https://iidalehtonen.com/writing/youtube-ai-search-visibility/)
+
 ---
 
 *The FAQ generator, the internal link audit, and the full prompt are open source: [seo-links-and-faqs on GitHub](https://github.com/iidaemilia/seo-links-and-faqs).*
