@@ -9,7 +9,7 @@ publishDate: 2026-08-07
 author: "Iida Lehtonen"
 readingTime: 5
 
-heroImage: "../../assets/images/youtube-hero.jpg"
+heroImage: "../../assets/images/Tube-search-hero.jpg"
 heroAlt: "Researcher comparing YouTube video and article citations in weekly AI search tracking results"
 
 tags:
