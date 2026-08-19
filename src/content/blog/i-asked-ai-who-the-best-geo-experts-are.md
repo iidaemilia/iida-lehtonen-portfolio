@@ -70,7 +70,7 @@ Here's what I asked and what I found.
 
 ## 1. What I asked, and which tools
 
-On 5 August 2026 I ran the same set of discovery queries across the four tools I track: Google's AI Overviews, Gemini, ChatGPT and Claude. I use the chatbots' free tiers, clean sessions and no personalization. The queries came from the tracking list I use in my [AI visibility measurement method]([LINKKI: How I Measure Brand Visibility in AI Search -artikkeli]):
+On 5 August 2026 I ran the same set of discovery queries across the four tools I track: Google's AI Overviews, Gemini, ChatGPT and Claude. I use the chatbots' free tiers, clean sessions and no personalization. The queries came from the tracking list I use in my [AI visibility measurement method](https://iidalehtonen.com/writing/how-i-track-ai-search-visibility-method/):
 
 - Best GEO experts to follow
 - Best generative engine optimization experts to follow
@@ -109,7 +109,7 @@ This matches what larger studies show. In December 2025, Ahrefs' Glen Allsopp [a
 - **43.8% of all cited page types were "best X" blog lists**, by far the most common content format in the sources.
 - Freshness mattered more than authority: **79.1% of cited lists had been updated within the year**, and 35% sat on low-authority domains.
 
-So the content that has performed in Google for a decade is now performing in AI answers, too. In one sense that's reassuring: the rules didn't change overnight, and SEO fundamentals still carry over. The engines do differ in which sources they favor, as I saw when I [tested whether YouTube helps AI search visibility]([LINKKI: YouTube-artikkeli]), but the overall pattern holds. In another sense it changes something important for the reader.
+So the content that has performed in Google for a decade is now performing in AI answers, too. In one sense that's reassuring: the rules didn't change overnight, and SEO fundamentals still carry over. The engines do differ in which sources they favor, as I saw when I [tested whether YouTube helps AI search visibility](https://iidalehtonen.com/writing/youtube-ai-search-visibility/), but the overall pattern holds. In another sense it changes something important for the reader.
 
 When you see a listicle in Google, you see the context around it: the domain, the design, the author, the ads. Those cues help you calibrate how much to trust it. An AI answer strips that context away and presents the same information in a neutral, confident voice. The source is still a listicle. You just can't see that anymore unless you go looking.
 
