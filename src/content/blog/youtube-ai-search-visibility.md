@@ -226,7 +226,7 @@ If you're seeing different patterns in your own data, I'd like to hear about it.
 
 __Read more:__
 
-[SEO vs. AEO vs. GEO: What's Actually Different (and What Isn't)](https://iidalehtonen.com/writing/seo-vs-aeo-vs-geo/)
+[What Is SEO vs. AEO vs. GEO?](https://iidalehtonen.com/writing/seo-vs-aeo-vs-geo/)
 
 [Do FAQs Matter for AI Search? I Built an FAQ Generator, Then Checked the Evidence](https://iidalehtonen.com/writing/do-faqs-matter-for-ai-search/)
 

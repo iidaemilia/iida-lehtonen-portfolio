@@ -19,7 +19,7 @@ import Container from "./Container.astro";
       </p>
 
       <div class="hero__actions">
-        <a href="/writing/">Read my writing</a>
+        <a href="/writing/seo-vs-aeo-vs-geo/">What is SEO vs. AEO vs. GEO?</a>
       </div>
     </div>
   </Container>
@@ -48,6 +48,12 @@ import Container from "./Container.astro";
       font-size: 0.875rem;
     }
     
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
     .hero__actions a {
       display: inline-block;
       padding: 1rem 2rem;

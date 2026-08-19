@@ -1,8 +1,8 @@
 ---
-title: "SEO vs. AEO vs. GEO: What's Actually Different (and What Isn't)"
-description: "SEO, AEO and GEO explained without hype: what each one optimizes for, where they overlap, what the evidence supports and what is genuinely new."
+title: "What Is SEO vs. AEO vs. GEO?"
+description: "SEO helps pages rank, AEO helps passages become direct answers, and GEO helps brands appear in AI-generated answers. Learn what differs and overlaps."
 
-excerpt: "I run SEO and GEO for one of Finland's largest consumer sites, and from where I sit, two things are true at once: organic search still drives massive traffic and revenue, and my own search behaviour has already changed. This is an evidence-based look at what SEO, AEO and GEO actually are, where they overlap, and what is genuinely new."
+excerpt: "SEO helps pages rank, AEO helps passages become direct answers, and GEO helps brands appear in AI-generated answers. Here is what differs, overlaps and actually matters."
 
 publishDate: 2026-07-30
 
@@ -30,6 +30,8 @@ faq:
 
 draft: false
 ---
+**SEO, AEO and GEO are three layers of organic visibility. SEO helps pages rank in search results, AEO helps passages become direct answers, and GEO helps brands and sources appear in AI-generated responses. They overlap heavily: SEO is the foundation, AEO focuses on extraction, and GEO extends visibility beyond your own website.**
+
 Every few months, someone declares SEO dead. This time the killer is supposed to be AI search, and the industry has reacted the way it always does: by inventing new acronyms. AEO. GEO. LLMO. AISEO. Half of the definitions contradict each other, and most of them come from people who sell software for the acronym they just invented.
 
 I want to offer a different starting point, because I am in a good position to compare the claims against reality. I run SEO and GEO for one of Finland's largest consumer websites. And from where I sit, two things are true at the same time.

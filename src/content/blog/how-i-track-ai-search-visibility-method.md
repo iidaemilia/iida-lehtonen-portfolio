@@ -347,6 +347,6 @@ __Read more:__
 
 [Does YouTube Actually Help AI Search Visibility? I Checked Google, ChatGPT, Claude and Gemini.](https://iidalehtonen.com/writing/youtube-ai-search-visibility/)
 
-[SEO vs. AEO vs. GEO: What's Actually Different (and What Isn't)](https://iidalehtonen.com/writing/seo-vs-aeo-vs-geo/)
+[What Is SEO vs. AEO vs. GEO?](https://iidalehtonen.com/writing/seo-vs-aeo-vs-geo/)
 
 [Do FAQs Matter for AI Search? I Built an FAQ Generator, Then Checked the Evidence](https://iidalehtonen.com/writing/do-faqs-matter-for-ai-search/)
