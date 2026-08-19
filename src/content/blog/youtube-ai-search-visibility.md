@@ -231,3 +231,5 @@ __Read more:__
 [Do FAQs Matter for AI Search? I Built an FAQ Generator, Then Checked the Evidence](https://iidalehtonen.com/writing/do-faqs-matter-for-ai-search/)
 
 [How I Track AI Search Visibility Without Paid Tools: A Repeatable Method](https://iidalehtonen.com/writing/how-i-track-ai-search-visibility-method/)
+
+[I Asked AI Who the Best GEO Experts Are. Here's Where the Answers Came From.](https://iidalehtonen.com/writing/i-asked-ai-who-the-best-geo-experts-are/)

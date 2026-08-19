@@ -126,3 +126,5 @@ __Read more:__
 [Does YouTube Actually Help AI Search Visibility? I Checked Google, ChatGPT, Claude and Gemini.](https://iidalehtonen.com/writing/youtube-ai-search-visibility/)
 
 [How I Track AI Search Visibility Without Paid Tools: A Repeatable Method](https://iidalehtonen.com/writing/how-i-track-ai-search-visibility-method/)
+
+[I Asked AI Who the Best GEO Experts Are. Here's Where the Answers Came From.](https://iidalehtonen.com/writing/i-asked-ai-who-the-best-geo-experts-are/)
