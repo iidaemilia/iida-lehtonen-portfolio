@@ -158,4 +158,4 @@ You do not need to become a software engineer. But if discoverability matters, y
 
 AI can help build the website. It cannot decide what "findable" needs to mean for your content strategy. That remains a human judgement.
 
-__Read more:__ [How Do You Stay Aware of Meaningful SEO Changes on a Website with 25,000 URLs?](https://iidalehtonen.com/writing/how-do-you-stay-aware-of-meaningful-seo-changes/) 
+__Read more:__ [GEO Case Study: How a Simple HTML Table Earned 6,000 Impressions in Google AI Overviews](https://iidalehtonen.com/writing/geo-case-study-html-table-google-ai-overviews/)
