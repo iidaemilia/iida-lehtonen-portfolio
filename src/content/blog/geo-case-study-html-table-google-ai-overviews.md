@@ -141,28 +141,6 @@ We are used to judging content by how well it is written. In AI search, it matte
 
 The work is not always to create more content. Sometimes it is to give existing information a discoverable form. Here, a simple HTML table was enough to test that idea and turn hidden data into measurable search value.
 
-## FAQ
-
-### Why did a plain HTML table earn AI search visibility without long-form content?
-
-Because the format matched the question. The customer's question connected two variables, location and availability, and a table exposes that relationship more clearly than prose. AI systems need an unambiguous source to extract answers from, and in this case structure did that work better than additional copy would have.
-
-### How much of the page's visibility came from AI search?
-
-About 15.4% of the page's Google impressions came from AI Overviews and AI Mode, roughly 6,000 out of 38,600 impressions in three months. On top of that, about 4% of measured sessions came from identifiable AI assistants such as ChatGPT and Perplexity. The first figure is visibility, the second is traffic, and they cannot be added together.
-
-### Why publish a separate page instead of relying on the existing lookup tool?
-
-The lookup tool served customers who were already in the sales journey, but its results were invisible to crawlers and AI systems. The new page made the same information available at the research stage, before the customer reached the site. It complemented the tool rather than replaced it, and clicks to the core product page grew 17.7% over the same period.
-
-### Does this prove that HTML tables improve AI search visibility?
-
-No. The page answered a question with existing search demand, on an established domain, and the measurement window was three months. What the case shows is that information previously locked inside an interactive tool earned measurable visibility in both traditional and generative search once it was published in an indexable form. The format was one factor among several.
-
-### Could the same approach work on other websites?
-
-The approach transfers, even if the numbers may not. Most companies hold useful data inside calculators, configurators or availability checkers that crawlers cannot operate. If customers ask a factual question that this data answers, publishing a stable, indexable version of it is a low-cost experiment with measurable results.
-
 __Read more:__
 
 [Can AI Read Your Website? Why Rendering Matters for AI Search](https://iidalehtonen.com/writing/can-ai-read-your-website/)
