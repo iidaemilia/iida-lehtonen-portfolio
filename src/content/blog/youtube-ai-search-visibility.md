@@ -1,6 +1,6 @@
 ---
-title: "Does YouTube Actually Help AI Search Visibility? I Checked Google, ChatGPT, Claude and Gemini."
-description: "I tracked 20 prompts weekly across Google, ChatGPT, Claude and Gemini. Only Google's AI search cited YouTube directly. Here's what that means for GEO."
+title: "Does YouTube Actually Help AI Search Visibility? I Tested and Here's What I Learned."
+description: "Three weeks, 20 prompts: YouTube appeared only in Google's AI search. And the videos it cites aren't the popular ones — 41% have under 1,000 views."
 
 excerpt: "YouTube is often called one of the most cited sources in AI search. In my weekly tracking, only Google's AI surfaces actually cited it. Here's what that means for your video strategy"
 
