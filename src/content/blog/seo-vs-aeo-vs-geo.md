@@ -123,7 +123,7 @@ If good GEO is mostly good SEO, what changes in practice? Honestly assessed, fou
 
 __Read more:__
 
-[Does YouTube Actually Help AI Search Visibility? I Checked Google, ChatGPT, Claude and Gemini.](https://iidalehtonen.com/writing/youtube-ai-search-visibility/)
+[How to Build a GEO Strategy (Not With llms.txt)](https://iidalehtonen.com/writing/how-to-build-a-geo-strategy/)
 
 [How I Track AI Search Visibility Without Paid Tools: A Repeatable Method](https://iidalehtonen.com/writing/how-i-track-ai-search-visibility-method/)
 

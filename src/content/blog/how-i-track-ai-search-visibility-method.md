@@ -349,6 +349,6 @@ __Read more:__
 
 [What Is SEO vs. AEO vs. GEO?](https://iidalehtonen.com/writing/seo-vs-aeo-vs-geo/)
 
-[Do FAQs Matter for AI Search? I Built an FAQ Generator, Then Checked the Evidence](https://iidalehtonen.com/writing/do-faqs-matter-for-ai-search/)
+[How to Build a GEO Strategy (Not With llms.txt)](https://iidalehtonen.com/writing/how-to-build-a-geo-strategy/)
 
 [I Asked AI Who the Best GEO Experts Are. Here's Where the Answers Came From.](https://iidalehtonen.com/writing/i-asked-ai-who-the-best-geo-experts-are/)
