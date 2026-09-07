@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import WritingArchivePage from "../../../components/WritingArchivePage.astro";
+import {
+  getPublishedArticles,
+  getTotalWritingPages,
+} from "../../../utils/writing";
+
+export async function getStaticPaths() {
+  const articles = await getPublishedArticles();
+  const totalPages = getTotalWritingPages(articles.length);
+
+  return Array.from(
+    { length: Math.max(0, totalPages - 1) },
+    (_, index) => {
+      const currentPage = index + 2;
+
+      return {
+        params: { page: currentPage.toString() },
+        props: { articles, currentPage },
+      };
+    },
+  );
+}
+
+interface Props {
+  articles: CollectionEntry<"blog">[];
+  currentPage: number;
+}
+
+const { articles, currentPage } = Astro.props;
+---
+
+<WritingArchivePage articles={articles} currentPage={currentPage} />

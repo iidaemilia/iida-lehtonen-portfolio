@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import Footer from "./Footer.astro";
+import Header from "./Header.astro";
+import WritingArchive from "./WritingArchive.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  createWritingArchiveSchema,
+  getTotalWritingPages,
+  getWritingPageArticles,
+  getWritingPagePath,
+} from "../utils/writing";
+
+interface Props {
+  articles: CollectionEntry<"blog">[];
+  currentPage: number;
+}
+
+const { articles, currentPage } = Astro.props;
+const totalPages = getTotalWritingPages(articles.length);
+const pageArticles = getWritingPageArticles(articles, currentPage);
+const pageTitle =
+  currentPage === 1
+    ? "Writing | Iida Lehtonen"
+    : `Writing — Page ${currentPage} | Iida Lehtonen`;
+const pageDescription =
+  currentPage === 1
+    ? "Articles about SEO, AI, content strategy and web development by Iida Lehtonen."
+    : `Page ${currentPage} of articles about SEO, AI search, content strategy and web development by Iida Lehtonen.`;
+const previousUrl =
+  currentPage > 1 ? getWritingPagePath(currentPage - 1) : undefined;
+const nextUrl =
+  currentPage < totalPages ? getWritingPagePath(currentPage + 1) : undefined;
+
+if (!Astro.site) {
+  throw new Error("The Astro site URL is required for the Writing archive schema.");
+}
+
+const schema = createWritingArchiveSchema(pageArticles, currentPage, Astro.site);
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  schema={schema}
+  previousUrl={previousUrl}
+  nextUrl={nextUrl}
+>
+  <Header />
+  <WritingArchive
+    articles={pageArticles}
+    currentPage={currentPage}
+    totalPages={totalPages}
+  />
+  <Footer />
+</BaseLayout>

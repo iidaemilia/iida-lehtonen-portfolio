@@ -1,5 +1,10 @@
-import { getCollection } from "astro:content";
 import type { APIRoute } from "astro";
+import {
+  ARTICLES_PER_PAGE,
+  getPublishedArticles,
+  getTotalWritingPages,
+  getWritingPagePath,
+} from "../utils/writing";
 
 const escapeXml = (value: string) =>
   value.replace(/[<>&'\"]/g, (character) => {
@@ -19,11 +24,36 @@ export const GET: APIRoute = async ({ site }) => {
     throw new Error("The Astro site URL is required to generate the sitemap.");
   }
 
-  const articles = await getCollection("blog", ({ data }) => !data.draft);
+  const articles = await getPublishedArticles();
+  const totalWritingPages = getTotalWritingPages(articles.length);
+  const writingPages = Array.from(
+    { length: totalWritingPages },
+    (_, index) => {
+      const pageNumber = index + 1;
+      const pageArticles = articles.slice(
+        index * ARTICLES_PER_PAGE,
+        pageNumber * ARTICLES_PER_PAGE,
+      );
+      const lastmod = pageArticles.reduce<Date | undefined>(
+        (latest, article) => {
+          const articleDate =
+            article.data.updatedDate ?? article.data.publishDate;
+
+          return !latest || articleDate > latest ? articleDate : latest;
+        },
+        undefined,
+      );
+
+      return {
+        url: new URL(getWritingPagePath(pageNumber), site),
+        lastmod,
+      };
+    },
+  );
   const pages = [
     { url: new URL("/", site), lastmod: undefined },
     { url: new URL("/about/", site), lastmod: undefined },
-    { url: new URL("/writing/", site), lastmod: undefined },
+    ...writingPages,
     { url: new URL("/privacy/", site), lastmod: undefined },
     ...articles.map((article) => ({
       url: new URL(`/writing/${article.id}/`, site),
