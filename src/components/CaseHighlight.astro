@@ -1,0 +1,288 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+import Container from "./Container.astro";
+
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  meta?: string;
+  title?: string;
+  summary?: string;
+  note?: string;
+  href?: string;
+  cta?: string;
+  stats?: Stat[];
+  image?: ImageMetadata;
+  imageAlt?: string;
+}
+
+const {
+  eyebrow = "Selected work",
+  heading = "Case study",
+  meta = "Three months · Organic · GEO",
+  title = "How a simple HTML table earned 6,000 impressions in Google AI Overviews",
+  summary =
+    "The information customers needed existed only inside the sales-funnel, invisible to search engines and AI systems. Publishing the same data as a plain, indexable HTML table turned it into a measurable content asset in traditional and generative search.",
+  note =
+    "Visibility and traffic are reported separately. Method and limitations are documented in the article.",
+  href = "/writing/geo-case-study-html-table-google-ai-overviews/",
+  cta = "Read the full case",
+  stats = [
+    { value: "38,000+", label: "Google impressions" },
+    { value: "6,000", label: "AI Overview / AI Mode impressions" },
+    { value: "15.4%", label: "of impressions from generative search" },
+  ],
+  image,
+  imageAlt =
+    "Woman reviewing a data table and upward-trending chart on a desktop monitor",
+} = Astro.props;
+---
+
+<section class="case-highlight" aria-labelledby="case-highlight-heading">
+  <Container>
+    <header class="case-highlight__header">
+      <p class="case-highlight__eyebrow">{eyebrow}</p>
+      <h2 id="case-highlight-heading">{heading}</h2>
+    </header>
+
+    <div
+      class:list={[
+        "case-highlight__body",
+        !image && "case-highlight__body--no-image",
+      ]}
+    >
+      {
+        image && (
+          <div class="case-highlight__media">
+            <Image
+              src={image}
+              alt={imageAlt}
+              widths={[480, 720, 1080]}
+              sizes="(max-width: 900px) calc(100vw - 2rem), 42vw"
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+        )
+      }
+
+      <div class="case-highlight__content">
+        <p class="case-highlight__meta">{meta}</p>
+
+        <h3><a href={href}>{title}</a></h3>
+
+        <p class="case-highlight__summary">{summary}</p>
+
+        <dl class="case-highlight__stats">
+          {
+            stats.map((stat) => (
+              <div class="case-highlight__stat">
+                <dt>{stat.value}</dt>
+                <dd>{stat.label}</dd>
+              </div>
+            ))
+          }
+        </dl>
+
+        <p class="case-highlight__note">{note}</p>
+
+        <a class="case-highlight__cta" href={href}>
+          {cta} <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .case-highlight {
+    padding-block: var(--space-xl);
+    background: var(--color-surface);
+  }
+
+  .case-highlight__header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .case-highlight__eyebrow {
+    margin-bottom: var(--space-sm);
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .case-highlight h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 5vw, 4.25rem);
+    line-height: 1;
+  }
+
+  .case-highlight__body {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+
+  .case-highlight__body--no-image {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 54rem;
+  }
+
+  .case-highlight__media {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--color-background);
+  }
+
+  .case-highlight__media :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .case-highlight__meta {
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .case-highlight h3 {
+    margin-top: 0.85rem;
+    font-family: var(--font-heading);
+    font-size: clamp(2.15rem, 3.4vw, 3.15rem);
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  .case-highlight h3 a {
+    color: var(--color-text);
+    transition: color 0.2s ease;
+  }
+
+  .case-highlight h3 a:hover,
+  .case-highlight__cta:hover {
+    color: var(--color-accent);
+  }
+
+  .case-highlight h3 a:focus-visible,
+  .case-highlight__cta:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+
+  .case-highlight__summary {
+    max-width: 44rem;
+    margin-top: var(--space-sm);
+    color: var(--color-text-muted);
+    font-size: 1.02rem;
+    line-height: 1.65;
+  }
+
+  .case-highlight__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-md) 0 0;
+  }
+
+  .case-highlight__stat {
+    min-width: 0;
+    padding-top: 0.9rem;
+    border-top: 2px solid var(--color-accent);
+  }
+
+  .case-highlight__stat dt {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.4vw, 2.75rem);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+
+  .case-highlight__stat dd {
+    margin: 0.5rem 0 0;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .case-highlight__note {
+    margin-top: var(--space-md);
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+  }
+
+  .case-highlight__cta {
+    display: inline-block;
+    margin-top: var(--space-md);
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--color-accent);
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  @media (max-width: 900px) {
+    .case-highlight {
+      padding-block: var(--space-lg);
+    }
+
+    .case-highlight__header {
+      margin-bottom: var(--space-md);
+    }
+
+    .case-highlight__body {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-md);
+    }
+
+    .case-highlight__media {
+      aspect-ratio: 5 / 2;
+    }
+
+    .case-highlight__stats {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+    }
+
+    .case-highlight__stat {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      padding-block: 1rem 1.25rem;
+    }
+
+    .case-highlight__stat dd {
+      margin-top: 0;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .case-highlight h2 {
+      font-size: 2.75rem;
+    }
+
+    .case-highlight h3 {
+      font-size: 2.15rem;
+    }
+
+    .case-highlight__stat dt {
+      flex: 0 0 auto;
+    }
+  }
+</style>
